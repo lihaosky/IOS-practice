@@ -36,6 +36,8 @@ NSString *paragraph3 = @"One of the coolest things about iPhone apps is how anim
 @property double startTime;
 @property double endTime;
 
+@property NSMutableArray *viewArray;
+
 @end
 
 @implementation ViewController
@@ -151,7 +153,7 @@ NSString *paragraph3 = @"One of the coolest things about iPhone apps is how anim
     NSLog(@"Frame height is %f", frame.size.height);
     NSArray *array = @[paragraph1, paragraph2, paragraph3];
     float remainHeight = frame.size.height;
-    NSMutableArray *viewArray = [NSMutableArray new];
+    _viewArray = [NSMutableArray new];
     UIView *currentView = nil;
     float containerHeight = 0;
     for (int i = 0; i < 3; i++) {
@@ -204,10 +206,13 @@ NSString *paragraph3 = @"One of the coolest things about iPhone apps is how anim
             if (!currentView) {
                 currentView = [[UIView alloc] initWithFrame:frame];
                 currentView.backgroundColor = [UIColor whiteColor];
-                UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUpDown:)];
-                [swipe setDirection:UISwipeGestureRecognizerDirectionUp];
-                [currentView addGestureRecognizer:swipe];
-                remainHeight = currentView.bounds.size.height;
+                UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUp:)];
+                [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
+                [currentView addGestureRecognizer:swipeUp];
+                UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDown:)];
+                [swipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
+                [currentView addGestureRecognizer:swipeDown];
+                remainHeight = currentView.bounds.size.height - 20;
                 NSLog(@"Initial remainHeight is %f", remainHeight);
             }
             int linesCanPlace = (int)floor(remainHeight / lineHeight);
@@ -244,7 +249,7 @@ NSString *paragraph3 = @"One of the coolest things about iPhone apps is how anim
             NSLog(@"bound rect height is %f, width is %f", rect.size.height, rect.size.width);
             
             if (remainHeight < lineHeight) {
-                [viewArray addObject:currentView];
+                [_viewArray addObject:currentView];
                 currentView = nil;
                 NSLog(@"New view added");
             } else {
@@ -254,10 +259,10 @@ NSString *paragraph3 = @"One of the coolest things about iPhone apps is how anim
         NSLog(@"==============================================");
     }
     if (currentView) {
-        [viewArray addObject:currentView];
+        [_viewArray addObject:currentView];
     }
     
-    for (id obj in [viewArray reverseObjectEnumerator]) {
+    for (id obj in [_viewArray reverseObjectEnumerator]) {
         [self.view addSubview:obj];
     }
 }
@@ -266,8 +271,29 @@ NSString *paragraph3 = @"One of the coolest things about iPhone apps is how anim
     [super viewWillAppear:animated];
 }
 
+- (void)swipeDown:(UISwipeGestureRecognizer *)swipe {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionDown) {
+        NSLog(@"Swipe down");
+        UIView *currentView = swipe.view;
+        NSUInteger index = [_viewArray indexOfObject:currentView];
+        NSLog(@"Index is %lu, count is %lu", index, _viewArray.count);
+        if (index <= 0) {
+            NSLog(@"index is larger than count");
+            return;
+        }
+        UIView *viewToShow = [_viewArray objectAtIndex:index - 1];
+        /*
+        [UIView animateWithDuration:0.8 animations:^{
+            CGPoint center = currentView.center;
+            viewToShow.center = center;
+        }];*/
+        [UIView animateWithDuration:0.8 delay:0 usingSpringWithDamping:0.75f initialSpringVelocity:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+            viewToShow.center = currentView.center;
+        } completion:nil];
+    }
+}
 
-- (void)swipeUpDown:(UISwipeGestureRecognizer *)swipe {
+- (void)swipeUp:(UISwipeGestureRecognizer *)swipe {
     if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
         NSLog(@"Swipe up");
         UIView *view = swipe.view;
