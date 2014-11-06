@@ -15,6 +15,8 @@
 		3AC13CCC19FC24CC0016C0EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC13CCB19FC24CC0016C0EF /* Images.xcassets */; };
 		3AC13CCF19FC24CC0016C0EF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC13CCD19FC24CC0016C0EF /* LaunchScreen.xib */; };
 		3AC13CDB19FC24CC0016C0EF /* AnimationPracTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC13CDA19FC24CC0016C0EF /* AnimationPracTests.m */; };
+		3AF781871A0B02AC0083667D /* constrains.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF781861A0B02AC0083667D /* constrains.m */; };
+		3AF7818A1A0B04870083667D /* cookies.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF781891A0B04870083667D /* cookies.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		3AC13CD419FC24CC0016C0EF /* AnimationPracTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationPracTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC13CD919FC24CC0016C0EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AC13CDA19FC24CC0016C0EF /* AnimationPracTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationPracTests.m; sourceTree = "<group>"; };
+		3AF781851A0B02AC0083667D /* constrains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constrains.h; sourceTree = "<group>"; };
+		3AF781861A0B02AC0083667D /* constrains.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constrains.m; sourceTree = "<group>"; };
+		3AF781881A0B04870083667D /* cookies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cookies.h; sourceTree = "<group>"; };
+		3AF781891A0B04870083667D /* cookies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cookies.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,10 @@
 				3AC13CC019FC24CC0016C0EF /* AppDelegate.m */,
 				3AC13CC519FC24CC0016C0EF /* ViewController.h */,
 				3AC13CC619FC24CC0016C0EF /* ViewController.m */,
+				3AF781851A0B02AC0083667D /* constrains.h */,
+				3AF781861A0B02AC0083667D /* constrains.m */,
+				3AF781881A0B04870083667D /* cookies.h */,
+				3AF781891A0B04870083667D /* cookies.m */,
 				3AC13CC819FC24CC0016C0EF /* Main.storyboard */,
 				3AC13CCB19FC24CC0016C0EF /* Images.xcassets */,
 				3AC13CCD19FC24CC0016C0EF /* LaunchScreen.xib */,
@@ -222,8 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF781871A0B02AC0083667D /* constrains.m in Sources */,
 				3AC13CC419FC24CC0016C0EF /* AnimationPrac.xcdatamodeld in Sources */,
 				3AC13CC119FC24CC0016C0EF /* AppDelegate.m in Sources */,
+				3AF7818A1A0B04870083667D /* cookies.m in Sources */,
 				3AC13CC719FC24CC0016C0EF /* ViewController.m in Sources */,
 				3AC13CBE19FC24CC0016C0EF /* main.m in Sources */,
 			);
@@ -416,6 +428,7 @@
 				3AC13CE019FC24CC0016C0EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AC13CE119FC24CC0016C0EF /* Build configuration list for PBXNativeTarget "AnimationPracTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +437,7 @@
 				3AC13CE319FC24CC0016C0EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

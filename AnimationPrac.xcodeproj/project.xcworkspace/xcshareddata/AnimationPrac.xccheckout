@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1417FE00-7571-4144-9567-D6AFD3CBE248</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AnimationPrac</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F48CF8BB78042E93D3A44296263D53A9D45BBFA1</key>
+		<string>https://github.com/lihaosky/IOS-practice.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AnimationPrac.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F48CF8BB78042E93D3A44296263D53A9D45BBFA1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lihaosky/IOS-practice.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F48CF8BB78042E93D3A44296263D53A9D45BBFA1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F48CF8BB78042E93D3A44296263D53A9D45BBFA1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AnimationPrac</string>
+		</dict>
+	</array>
+</dict>
+</plist>
